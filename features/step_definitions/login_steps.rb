@@ -3,10 +3,7 @@ Dado('que acesso a página de login') do
 end
 
 Quando('preencho meu {string} e {string}') do |email, password|
-    find("input[id=email]").set email
-    find("input[id=passwd]").set password
-
-    click_button "Sign in"
+    @login_page.open(email, password)
 end
   
 Então('vejo o dashboard') do
